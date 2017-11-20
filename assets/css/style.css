@@ -1,0 +1,92 @@
+
+
+body{
+background-image: url("http://t3.gstatic.com/images?q=tbn:ANd9GcRURiZVhRuxkPIU3h5yyUaAt7dX7Bro_aup-aPRjW7j10J5jWuS");
+background-position: center repeat-y;
+background-attachment: scroll;
+background color: yellow;
+z-index: 1;
+}
+#header
+{
+height: 150px;
+text-align: center;
+font-size: 44px;
+margin: 20px 20px;
+padding-top: 30px;
+font-family: arial, sans-serif;
+color:#9a6ec1;
+font-weight: 22;
+border-radius: 15px;
+z-index: 2;
+opacity: 80%;
+background-color: yellow;
+}
+h1
+{
+height: 150px;
+text-align: center;
+font-size: 44px;
+margin: 20px 20px;
+padding-top: 50px;
+font-family: arial, sans-serif;
+color:#9a6ec1;
+font-weight: 22;
+border-radius: 15px;
+z-index: 2;
+}
+
+	
+.timer, #startGame, #show-number
+{
+	height: 200px;
+	font-size: 40px;
+	float: left;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	margin-left: 300px;
+	background-color: yellow;
+}
+#timeRemain
+{
+	float: left;
+	padding-left: 40px;
+	height: 200px;
+	text-align: center;
+	margin: 30px 30px;
+	font-size: 30px;
+	font-family: 'Lobster', cursive;
+	background-color: yellow;
+}
+.questions
+{
+	clear: both;
+	float: left;
+	text-align: center;
+	font-size: 22px;
+	line-height: 4;
+	margin: 20px 20px;
+	background-color: yellow;
+	border: 10px blue;
+}
+#submit
+{
+	height: 200px;
+	font-size: 40px;
+	float: left;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	margin-left: 300px;
+	background-color: yellow;
+}
+#closePage
+{
+	padding: 30px 50px;
+	background-color: yellow;
+	height: 400px;
+	width: 600px;
+	font-size: 44px;
+	margin-top: 80px;
+	margin-left: 300px;
+	float: left;
+}
