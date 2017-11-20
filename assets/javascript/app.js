@@ -1,22 +1,23 @@
+//hide questions until startgame clicked
 $("#questPage").hide();
 $("#closePage").hide();
 $("timer").hide();
 //variable to hold countdown for timer
- var number = 60;
- 
+ var number = 20;
+ var intervalId;
 
 
-    
 
-    var intervalId;
 $(document).ready(function(){
 
 // click handler for start game
   $("#startGame").on("click", function() {
-
+  		//hides initial elements and shows questions
     	$("#openPage").hide();
     	$("#questPage").show();
     	$("#startGame").hide();
+    	
+    		//calls timer function
     	function run() {
       intervalId = setInterval(decrement, 1000);
     }
@@ -33,65 +34,47 @@ $(document).ready(function(){
         alert("Time Up!");
       }
     }
-
+    // function to stop game if time runs out or submit button pressed
     function stop() {
 
       clearInterval(intervalId);
-
+      	
       $("#questPage").hide();
       $("#closePage").show();
+      // if statement to hold values from answers and show which ones were correct and wrong
+		if ($("input[value='correct']").val())
+		{
+			corrAns++;
+			
+			
+		}
+		 if
+			($("input[value='wrong']").val())
+		{
+			wrongAns++;
+			
+		}
+		$("#correctAnswers").append("<h2>" + corrAns + "</h2>");
+		$("#wrongAnswers").append("<h2>" + wrongAns + "</h2>");
+		
     }
  run();
 	
 });
   $("#submit").on("click", function(){
+		 // hides questions and shows answers when submit clicked
 		 $("#questPage").hide();
          $("#closePage").show();
-		var corrAns = 0
-		var wrongAns = 0
-		for (var i; i < 8; i++){
-		if ($("input[value='correct']").val(corrAns))
-		{
-			corrAns++;
-			console.log(corrAns);
-		}
-		else if
-			($("input[value='wrong']").val(wrongAns))
-		{
-			wrongAns++;
-			console.log(wrongAns);
-		}
-		}
-		 
-		console.log(corrAns);
-		console.log(wrongAns);
-		$("#correctAnswers").append("<h2>" + corrAns + "</h2>");
-		$("#wrongAnswers").append("<h2>" + wrongAns + "</h2>");
-		
+         //calls stop function when submit clicked
+         stop();
 		
 	});
  });
-/*$("#submit").on("click", function(){
 
-var corrAns = 0
-var wrongAns = 0
-for (var i; i < 8; i++){
-	if ($("input[name=ans]").val(correct))
-	{
-		corrAns++
-	}
-	else{
-		wrongAns++
-	}
-	console.log(corrAns);
-	console.log(wrongAns);
-	$("#correctAnswers").html(corrAns);
-	$("#wrongAnswers").html(wrongAns);
-}
-});
 
 
 //objects to hold question and answers for quiz
+// could not get radio buttons to cooperate as classes and objects
 
 /*var questions = {
 	q1: ["What did Happy say to the ball when it wouldnt go in the hole?",
