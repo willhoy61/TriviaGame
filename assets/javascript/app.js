@@ -5,6 +5,8 @@ $("timer").hide();
 //variable to hold countdown for timer
  var number = 20;
  var intervalId;
+ var corrAns = 0;
+ var wrongAns = 0;
 
 
 
@@ -16,6 +18,8 @@ $(document).ready(function(){
     	$("#openPage").hide();
     	$("#questPage").show();
     	$("#startGame").hide();
+    	run();
+    });
     	
     		//calls timer function
     	function run() {
@@ -42,34 +46,32 @@ $(document).ready(function(){
       $("#questPage").hide();
       $("#closePage").show();
       // if statement to hold values from answers and show which ones were correct and wrong
-		if ($("input[value='correct']").val())
-		{
-			corrAns++;
-			
-			
-		}
-		 if
-			($("input[value='wrong']").val())
-		{
-			wrongAns++;
-			
-		}
-		$("#correctAnswers").append("<h2>" + corrAns + "</h2>");
-		$("#wrongAnswers").append("<h2>" + wrongAns + "</h2>");
 		
-    }
- run();
-	
-});
-  $("#submit").on("click", function(){
+	}
+	$("#submit").on("click", function(){
 		 // hides questions and shows answers when submit clicked
 		 $("#questPage").hide();
          $("#closePage").show();
-         //calls stop function when submit clicked
+        
+	 $("input:radio").each(function() {
+			if($("input[value='correct]").val()) {
+				corrAns++; 
+			} else {
+				wrongAns++;
+			}
+			console.log(corrAns);
+			console.log(wrongAns);
+			});
+
+         $("#correctAnswers").text(corrAns);
+         $("#wrongAnswers").text(wrongAns);
          stop();
-		
-	});
- });
+    	 });
+ 
+         
+     });
+     
+    
 
 
 
